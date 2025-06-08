@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- META TAGS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flix & Feast - Movie/Dessert Pairings</title>
+    
+    <!-- CSS STYLES -->
+    <style>
+        /* ===== GLOBAL STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Ensures padding doesn't affect width */
+            font-family: 'Arial', sans-serif;
+        }
+        
+         body {
+            background-color: #f5f5f5; /* Light gray background */
+            color: #333; /* Dark gray text */
+        }
+
+
+        /* Combining colors for bg un-comment to check...*/
+/* 
+        body {
+            background: linear-gradient(
+            to bottom, 
+          #d0cece, 
+          #312c2a, 
+          #a1c4fd 
+  );
+        } */
+        
+        /* ===== HEADER STYLES ===== */
+        header {
+            background-color: #222; /* Dark background */
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        /* ===== NAVIGATION BAR ===== */
+        nav {
+            background-color: #333; /* Slightly lighter than header */
+            padding: 1rem;
+        }
+        
+        /* Desktop navigation links */
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin: 0 1rem; /* Spacing between nav items */
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        /* Mobile burger menu (hidden by default) */
+        .burger {
+            display: none;
+            cursor: pointer;
+        }
+        
+        /* ===== MAIN CONTENT ===== */
+        .container {
+            max-width: 1200px; /* Limits content width */
+            margin: 2rem auto; /* Centers container */
+            padding: 0 1rem; /* Prevents content touching edges */
+        }
+        
+        h2 {
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        /* Card grid layout */
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem; /* Space between cards */
+        }
+        
+        /* Individual card styling */
+        .card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden; /* Keeps images rounded */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease; /* Smooth hover effect */
+        }
+        
+        .card:hover {
+            transform: translateY(-5px); /* Lifts card on hover */
+        }
+        
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover; /* Ensures images fill space */
+        }
+        
+        .card-content {
+            padding: 1.5rem;
+        }
+        
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 768px) {
+            /* Mobile navigation styles */
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            /* Show burger menu on mobile */
+            .burger {
+                display: block;
+                color: white;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== HEADER SECTION ===== -->
+    <header>
+        <h1>Flix & Feast</h1>
+        <p>Perfect movie and dessert pairings</p>
+    </header>
+    
+    <!-- ===== NAVIGATION ===== -->
+    <nav>
+        <!-- Mobile burger menu button -->
+        <div class="burger" onclick="toggleMenu()">☰ Menu</div>
+        <!-- Navigation links -->
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Movies</a></li>
+            <li><a href="#">Desserts</a></li>
+            <li><a href="#">Pairings</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+    
+    <!-- ===== MAIN CONTENT ===== -->
+    <div class="container">
+        <section>
+            <h2>Featured Pairings</h2>
+            <div class="card-container">
+                <!-- Movie + Dessert Pairing Card -->
+                <div class="card">
+                    <img src="Grand.jpg" alt="The Grand Budapest Hotel">
+                    <div class="card-content">
+                        <h3>The Grand Budapest Hotel</h3>
+                        <p>Wes Anderson's whimsical masterpiece</p>
+                        <div class="pairing">
+                            <h4>Perfect with:</h4>
+                            <p>Courtesan au Chocolat</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Movie Card -->
+                <div class="card">
+                    <img src="amelie.jpg" alt="Amelie">
+                    <div class="card-content">
+                        <h3>Amelie</h3>
+                        <p>A charming French romantic comedy</p>
+                    </div>
+                </div>
+                
+                <!-- Dessert Card -->
+                <div class="card">
+                    <img src="creme.jpg" alt="Crème Brûlée">
+                    <div class="card-content">
+                        <h3>Crème Brûlée</h3>
+                        <p>Classic French dessert with caramelized sugar crust</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>&copy; 2025 Flix & Feast. All rights reserved.</p>
+    </footer>
+    
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        /**
+         * Toggles mobile menu visibility
+         */
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
