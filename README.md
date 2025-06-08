@@ -1,5 +1,8 @@
 `# Flix & Feast
 
+<img width="1350" alt="image" src="https://github.com/user-attachments/assets/b1ff91ad-c2d4-47bf-b420-9a232b60d11e" />
+
+
 A responsive website showcasing perfect movie and dessert pairings.`
 
 ## Features
